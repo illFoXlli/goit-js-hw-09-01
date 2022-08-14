@@ -16,3 +16,224 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.text-up-btn {
+  text-align: center;
+}
+
+.text-color {
+  text-align: center;
+}
+
+.btn-stop-start-div-Center {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  margin: 6px;
+  font-size: inherit;
+  line-height: 1.42;
+  padding: 0.8em 1.6em;
+  font-weight: normal;
+  border-width: 0;
+  border-style: solid;
+  background: transparent;
+  border-radius: 0.2666666667em;
+  cursor: pointer;
+  font-family: 'Booster Next FY', 'Avenir Next', Avenir, sans-serif;
+  user-select: none;
+  vertical-align: bottom;
+  transition: box-shadow 0.2s, transform 0.2s, color 0.2s;
+}
+
+.btn-primary {
+  box-shadow: 0 3px 0 0 #b3004a, 0 4px 4px -1px rgb(0 0 0 / 60%),
+    0 4px 6px 1px rgb(0 0 0 / 30%), 0 1px 2px 1px rgb(0 0 0 / 0%) inset,
+    0 18px 32px -2px rgb(255 255 255 / 10%) inset;
+  background-color: #ff006a;
+  background-image: linear-gradient(-45deg, #ff006a, #ff00aa);
+  color: #e6eaef;
+}
+.btn-primary:hover {
+  box-shadow: 0 3px 0 0 #b3004a, 0 6px 4px -1px rgb(0 0 0 / 30%),
+    0 4px 16px rgb(0 0 0 / 50%), 0 1px 2px 1px rgb(0 0 0 / 0%) inset,
+    0 18px 32px -2px rgb(255 255 255 / 14%) inset;
+}
+
+.btn-secondary-active {
+  box-shadow: 0 3px 0 0 #367f14, 0 4px 4px -1px rgb(0 0 0 / 60%),
+    0 4px 6px 1px rgb(0 0 0 / 30%), 0 1px 2px 1px rgb(0 0 0 / 0%) inset,
+    0 18px 32px -2px rgb(255 255 255 / 10%) inset;
+  background-color: #52c11f;
+  background-image: linear-gradient(-45deg, #52c11f, #7ccc14);
+  color: #e6eaef;
+}
+.btn-primary-active {
+  box-shadow: 0 3px 0 0 #367f14, 0 4px 4px -1px rgb(0 0 0 / 60%),
+    0 4px 6px 1px rgb(0 0 0 / 30%), 0 1px 2px 1px rgb(0 0 0 / 0%) inset,
+    0 18px 32px -2px rgb(255 255 255 / 10%) inset;
+  background-color: #52c11f;
+  background-image: linear-gradient(-45deg, #52c11f, #7ccc14);
+  color: #e6eaef;
+}
+.btn-active {
+  transform: translateY(3px);
+  display: inline-block;
+  margin: 6px;
+  font-size: inherit;
+  line-height: 1.42;
+  padding: 0.8em 1.6em;
+  font-weight: normal;
+  border-width: 0;
+  border-style: solid;
+  border-radius: 0.2666666667em;
+  cursor: pointer;
+  font-family: 'Booster Next FY', 'Avenir Next', Avenir, sans-serif;
+  user-select: none;
+  vertical-align: bottom;
+  transition: box-shadow 0.2s, transform 0.2s, color 0.2s;
+}
+.btn-primary-active {
+  box-shadow: 0 0px 0 0 #2d6911, 0 3px 0 0 rgb(0 0 0 / 0%),
+    0 4px 16px rgb(0 0 0 / 0%), 0 1px 2px 1px rgb(0 0 0 / 50%) inset,
+    0 -18px 32px -2px rgb(255 255 255 / 10%) inset;
+  transition: 0s;
+  color: #367f14;
+  text-shadow: 0 1px 0 rgb(255 255 255 / 30%);
+}
+/* ----------------------------------------------- */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap'); */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.body2 {
+background-image:url("https://mota.ru/upload/wallpapers/source/2011/03/02/09/05/24434/mota_ru_1030207.jpg");
+}
+body {
+  
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:top;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}  
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.4);
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+.countdown-container{
+  display:flex;
+}
+.big-text{
+  font-size:4rem;
+}
+.title{
+  margin:10px;
+  text-align:center;
+  color:#fff;
+  width:100%;
+  letter-spacing:2px;
+  font-size: 3rem;
+  line-height: 5.5rem;
+}
+.title span{
+  display:block;
+  font-size:6rem;
+  letter-spacing:2rem;
+}
+.wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap: wrap;
+  min-height:100vh;
+}
+.countdown-container > div{
+  margin:0 2rem;
+  text-align: center;
+  border:2px solid #fff;
+  padding:0px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  color:#fff;
+  min-width:150px;
+}
+@media (max-width:992px){
+  .countdown-container > div{
+  margin:0 1rem;
+  }
+}
+@media (max-width:767px){
+  .countdown-container{
+  flex-wrap: wrap;
+  }
+  .countdown-container > div{
+  margin:1rem auto;
+  max-width:150px;
+  }
+  .title{
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  margin:10px 0px;
+  }
+  .title span{
+  font-size: 2rem;
+  letter-spacing: 1rem;
+  }
+}
+.bot5 {
+  display: block;
+  width:80px;
+  margin: 20px auto;
+  vertical-align: top;
+  padding: 7px 20px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #111;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 1);
+  background-color: #ccc;
+  background-clip: padding-box;
+  border: 1px solid;
+  border-color: #202020 #1a1a1a #111;
+  border-radius: 2px;
+  background-image: -webkit-linear-gradient(top, #efefef, #777);
+  background-image: -moz-linear-gradient(top, #efefef, #777);
+  background-image: -o-linear-gradient(top, #efefef, #777);
+  background-image: linear-gradient(to bottom, #efefef, #777);
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.09), 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.09), 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.bot5:not([disabled]):hover {
+  background-color: #aaaaaa;
+  background-image: -webkit-linear-gradient(top, #ccc, #555);
+  background-image: -moz-linear-gradient(top, #ccc, #555);
+  background-image: -o-linear-gradient(top, #ccc, #555);
+  background-image: linear-gradient(to bottom, #ccc, #555);
+}
+.bot5:not([disabled]):active {
+  background-color: #b42f32;
+  border-color: #1c1c1c #202020 #222;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.09);
+}
+
+
