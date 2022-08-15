@@ -24,7 +24,7 @@ function createPromise(position, delay) {
 refs.formBtnStartTimer.addEventListener('click', event => {
   event.preventDefault();
 
-  for (let i = 1; i <= refs.amount.value; i++) {
+  for (let i = 0; i < refs.amount.value; i++) {
     createPromise(i, Number(refs.firstDelay.value) + Number(refs.delayStep.value) * i)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(

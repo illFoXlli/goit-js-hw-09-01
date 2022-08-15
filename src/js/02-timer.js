@@ -32,26 +32,21 @@ const options = {
         IntervId = setInterval(() => {
           ms = ms - 1000;
           if (ms > 0) {
-            if (convertMs(ms).days < 10) {
-              rafs.dayTextContent.textContent = '0' + convertMs(ms).days;
-            } else {
-              rafs.dayTextContent.textContent = convertMs(ms).days;
-            }
-            if (convertMs(ms).hours < 10) {
-              rafs.hoursTextContent.textContent = '0' + convertMs(ms).hours;
-            } else {
-              rafs.hoursTextContent.textContent = convertMs(ms).hours;
-            }
-            if (convertMs(ms).minutes < 10) {
-              rafs.minutesTextContent.textContent = '0' + convertMs(ms).minutes;
-            } else {
-              rafs.minutesTextContent.textContent = convertMs(ms).minutes;
-            }
-            if (convertMs(ms).seconds < 10) {
-              rafs.secondsTextContent.textContent = '0' + convertMs(ms).seconds;
-            } else {
-              rafs.secondsTextContent.textContent = convertMs(ms).seconds;
-            }
+            rafs.dayTextContent.textContent = convertMs(ms)
+              .days.toString()
+              .padStart(2, '0');
+
+            rafs.hoursTextContent.textContent = convertMs(ms)
+              .hours.toString()
+              .padStart(2, '0');
+
+            rafs.minutesTextContent.textContent = convertMs(ms)
+              .minutes.toString()
+              .padStart(2, '0');
+
+            rafs.secondsTextContent.textContent = convertMs(ms)
+              .seconds.toString()
+              .padStart(2, '0');
 
             rafs.dtnStartTimer.disabled = true;
           }
