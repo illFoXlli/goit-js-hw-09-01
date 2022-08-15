@@ -2,7 +2,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
-const rafs = {
+const refs = {
   input: document.querySelector('#datetime-picker'),
   dtnStartTimer: document.querySelector('[data-start]'),
   dayTextContent: document.querySelector('[data-days]'),
@@ -11,9 +11,12 @@ const rafs = {
   secondsTextContent: document.querySelector('[data-seconds]'),
 };
 
-rafs.dtnStartTimer.disabled = true;
+refs.dtnStartTimer.disabled = true;
 let ms = 0;
 let IntervId = null;
+const TIME = 1000;
+
+const addLeadingZero = value => value.toString().padStart(2, '0');
 
 const options = {
   enableTime: true,
@@ -25,54 +28,45 @@ const options = {
     if (selectedDates[0] <= new Date()) {
       Notiflix.Notify.failure('Please choose a date in the future');
     } else {
-      rafs.dtnStartTimer.disabled = false;
+      refs.dtnStartTimer.disabled = false;
       ms = selectedDates[0].getTime() - new Date().getTime();
 
-      rafs.dtnStartTimer.addEventListener('click', event => {
+      refs.dtnStartTimer.addEventListener('click', event => {
         IntervId = setInterval(() => {
-          ms = ms - 1000;
+          ms = ms - TIME;
           if (ms > 0) {
-            rafs.dayTextContent.textContent = convertMs(ms)
-              .days.toString()
-              .padStart(2, '0');
-
-            rafs.hoursTextContent.textContent = convertMs(ms)
-              .hours.toString()
-              .padStart(2, '0');
-
-            rafs.minutesTextContent.textContent = convertMs(ms)
-              .minutes.toString()
-              .padStart(2, '0');
-
-            rafs.secondsTextContent.textContent = convertMs(ms)
-              .seconds.toString()
-              .padStart(2, '0');
-
-            rafs.dtnStartTimer.disabled = true;
+            refs.dayTextContent.textContent = addLeadingZero(
+              convertMs(ms).days
+            );
+            refs.hoursTextContent.textContent = addLeadingZero(
+              convertMs(ms).hours
+            );
+            refs.minutesTextContent.textContent = addLeadingZero(
+              convertMs(ms).minutes
+            );
+            refs.secondsTextContent.textContent = addLeadingZero(
+              convertMs(ms).seconds
+            );
+            refs.dtnStartTimer.disabled = true;
           }
-          if (ms < 1000) {
+          if (ms < TIME) {
             Notiflix.Notify.success('Countdown finished');
             clearInterval(IntervId);
           }
-          console.log(`работает отрецательный счетчик `); //Удолить оставил мэнтору для проверки
-        }, 1000);
+        }, TIME);
       });
     }
   },
 };
 
-flatpickr(rafs.input, options);
+flatpickr(refs.input, options);
 
-// rafs.dtnStartTimer.addEventListener("click", () => {
-
-// })
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
-
   // Remaining days
   const days = Math.floor(ms / day);
   // Remaining hours
@@ -85,9 +79,4 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-function timerSecTest() {
-  setInterval(() => {
-    const correntTime = new Date();
-    console.log(correntTime);
-  }, 1000);
-}
+
